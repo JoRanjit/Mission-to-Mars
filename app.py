@@ -5,8 +5,8 @@ import scraping
 app=Flask(__name__)
 
 #use flask_pymongo to set upmongo connecion
-app.config["MONGO_UTI"] = "mongodb://localhost:27017/mars_app"
-mongo = PyMongo(app )
+app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_app"
+mongo = PyMongo(app)
 
 #set up flask route for the home page of our webpage
 @app.route("/")
