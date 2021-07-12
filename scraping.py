@@ -13,7 +13,7 @@ def scrape_all():
     executable_path = {'executable_path':ChromeDriverManager().install()}
     
     # the "headless" browsing session is when a browser is run without the users seeing it at all.
-    browser = Browser('chrome',**executable_path,headless=False)
+    browser = Browser('chrome',**executable_path,headless=True)
 
     news_title, news_paragraph = mars_news(browser)
 
@@ -23,9 +23,10 @@ def scrape_all():
             "news_paragraph": news_paragraph,
             "featured_image": featured_image(browser),
             "facts": mars_facts(),
-            'last_modified':dt.datetime.now()
+            'last_modified':dt.datetime.now(),
+            'hemispheres': hemispheres(browser)
     }
-
+    print(featured_image(browser))
     # Stop webdriver and return data
     browser.quit()
     return data
@@ -70,6 +71,7 @@ def featured_image(browser):
 
     #visit url
     url = 'https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/index.html'
+    #url= "https://www.space.com/nasa-mars-rover-curiosity-eight-years.html"
     browser.visit(url)
 
 
@@ -84,11 +86,14 @@ def featured_image(browser):
     try:
         # Find the relative image url
         img_url_rel = img_soup.find('img', class_='headerimage fade-in').get('src')
+        #img_url_rel = img_soup.find('img', class_='hero-image').get('src')
+        
     except AttributeError:
         return None
 
     # Use the base URL to create an absolute URL
     img_url = f'https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/{img_url_rel}'
+    #img_url= f'{img_url_rel}'
     
     return img_url
 
@@ -107,7 +112,48 @@ def mars_facts():
     df.set_index('Description',inplace=True)
 
     # Convert dataframe into HTML format, add bootstrap
-    return df.to_html(classes="table table-striped")
+    return df.to_html(classes="table table-bordered")
+
+def hemispheres(browser):
+
+    url = 'https://marshemispheres.com/'
+    browser.visit(url)
+
+    
+    html=browser.html
+    hemi_img_soup = soup(html,'html.parser')
+
+
+    # 2. Create a list to hold the images and titles.
+    hemisphere_image_urls = []
+
+
+    # Find the count of all images
+    img_lst = hemi_img_soup.find_all(class_="item")
+    img_len = len(img_lst)
+
+    # 3. Write code to retrieve the image urls and titles for each hemisphere.
+    for i in range(img_len):
+        
+        hemisphere={}
+        
+        img_elem = browser.find_by_css("a.itemLink.product-item h3")[i]
+        img_title = img_elem.text
+        
+        img_elem.click()
+        img_url=browser.links.find_by_text("Sample")[0]["href"]
+        
+        hemisphere["img_url"] = img_url
+        hemisphere["img_title"] = img_title
+        
+        hemisphere_image_urls.append(hemisphere)
+        
+        browser.back()
+
+    return hemisphere_image_urls
+
+
+
 
 if __name__ == "__main__":
     # if running as script, print scraped data

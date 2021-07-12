@@ -28,7 +28,7 @@ def scrape():
     # updating the db s=using update function, upsert=true indicates that we'll create new one if it does not exist
     mars.update({},mars_data,upsert=True)
     # this will navigate back to the home page to see the refreshed content
-    return redirect('/',code=302)
+    return redirect('/', code=302)
 
 #calling the functions to run
 if __name__ == "__main__":
