@@ -42,9 +42,17 @@ Please Note: I tried to toggle between 2 pictures from different websites to be 
 ![hemisphere thumbnails]( https://github.com/JoRanjit/Mission-to-Mars/blob/main/images/Thumbnails%20-%20bootstrap.PNG)
 
 #### Home page title formats, and scraping button color change etc. :
+* Scraping button has a lighter blue shade background using 'btn-info'.
+* 'Latest Mars News' title is in red font, and centralized.
+* 2nd Heading is in blue font using "text-primary".
+* The latest news section has light-yellow background.
+* The featured Mars image title is centralized with red font.
+* The facts table has borders using "table table-bordered" in scraping.py.
+* Different 'Featured Image' than the previous screenshot.
+
 ![Home page update]( https://github.com/JoRanjit/Mission-to-Mars/blob/main/images/bootstrap%20updates%20to%20formatting.PNG)
 
 
-Please Note: I tried to toggle between 2 pictures from different websites to be used as the 'Featured Mars Image".
+
 
 
