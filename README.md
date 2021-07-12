@@ -2,7 +2,7 @@
 
 ## In this project we created a web app using BeautifulSoup and Splinter to scrape the latest news on the planet Mars.
 
-### We scraped different websites to derive thes key componenets on the website:
+### We scraped different websites to derive these key components on the website:
   * The latest news relating to Mars
   * A very recent picture from the Mars
   * A table containing different facts related to Earth and Mars
@@ -21,9 +21,9 @@ Please Note: I tried to toggle between 2 pictures from different websites to be 
 #### Here is screenshot from MongoDB 'Mars' collection with 'hemispheres' data scraped from 'Mars Hemispheres website' using scraping.py:
 ![MongoDB hemispheres data]( https://github.com/JoRanjit/Mission-to-Mars/blob/main/images/MongoDB%20hemispheres%20added%20to%20Mars%20collection.PNG)
 
-#### Here is the landing page from the website complete with the button to 'Srape New Data':
+#### Here is the landing page from the website complete with the button to 'Scrape New Data':
 
-*Note - The featured image in this is from a idfferent website than some of the later ones:*
+*Note - The featured image in this is from a different website than some of the later ones:*
 ![homepage]( https://github.com/JoRanjit/Mission-to-Mars/blob/main/images/MissiontoMars%20-%20portal%20page%20%231.PNG)
 
 #### Next we used scraping.py and app.py to upload these images with titles from Mars DB to the website using index.html:
