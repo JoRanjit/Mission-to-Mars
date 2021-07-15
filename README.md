@@ -32,11 +32,11 @@ Please Note: I tried to toggle between 2 pictures from different websites to be 
 #### Then we made some html updates to make sure that the website is mobile compatible:
 * iPhone compatible:
 
-![Mobile compatibility-phoen]( https://github.com/JoRanjit/Mission-to-Mars/blob/main/images/MissiontoMars%20-%20mobile%20compatible%20-%20iphone%20-%20%231.PNG)
+![Mobile compatibility-phone]( https://github.com/JoRanjit/Mission-to-Mars/blob/main/images/MissiontoMars%20-%20mobile%20compatible%20-%20iphone%20-%20%232.PNG)
 
 * iPad compatible: 
 
-![Mobile compatibility - ipad]( https://github.com/JoRanjit/Mission-to-Mars/blob/main/images/MissiontoMars%20-%20mobile%20compatible%20-%20ipad.PNG)
+![Mobile compatibility - ipad]( https://github.com/JoRanjit/Mission-to-Mars/blob/main/images/MissiontoMars%20-%20mobile%20compatible%20-%20ipad%20%232.PNG)
 
 #### Finally made some bootstrap formatting on the landing page:
 ![hemisphere thumbnails]( https://github.com/JoRanjit/Mission-to-Mars/blob/main/images/Thumbnails%20-%20bootstrap.PNG)
