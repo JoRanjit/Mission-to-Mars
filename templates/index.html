@@ -67,10 +67,10 @@
 
         {% for hemisphere in mars.hemispheres %}
         <div class="col-xs-3">
-          <div class="container-fluid">
-            <img src="{{hemisphere.img_url | default('static/images/error.png', true)}}" alt="..." class="img-thumbnail">
-            <div class="caption">
-              <h3>{{hemisphere.img_title}}</h3>
+          <div class="thumbnail">
+            <img src="{{hemisphere.img_url | default('static/images/error.png', true)}}" alt="..." class='img-thumbnail'>
+            <div class="caption col-xs-3">
+              <h3 style="color:red;font-size:2.2vw;">{{hemisphere.img_title}}</h3>
             </div>
           </div>
         </div>
